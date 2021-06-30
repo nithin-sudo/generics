@@ -1,52 +1,15 @@
 package com.bridgelabz;
-public class PrintMaximum {
+public class PrintMaximum{
     /**
-     *Finding maximum integer among three integers using compareTo method.
+     * using generic method to find the maximum values.
      * @param x
      * @param y
      * @param z
+     * @param <E>
      * @return
      */
-    private static int integerMaximum(Integer x,Integer y,Integer z)
-    {
-        int maximum = x;
-        if(y.compareTo(maximum) > 0)
-        {
-            maximum = y;
-        }
-        if (z.compareTo(maximum) > 0) {
-            maximum = z;
-        }
-        printMax(x,y,z,maximum);
-        return maximum;
-    }
-    /**
-     * Finding maximum float value among three float using compareTo method.
-     * @param x
-     * @param y
-     * @param z
-     * @return
-     */
-    public static Float floatMaximum(Float x,Float y,Float z) {
-        Float maximum = x;
-        if (y.compareTo(maximum) > 0) {
-            maximum = y;
-        }
-        if (z.compareTo(maximum) > 0) {
-            maximum = z;
-        }
-        printMax(x, y, z, maximum);
-        return maximum;
-    }
-    /**
-     * Finding maximum String among three strings using compareTo method.
-     * @param x
-     * @param y
-     * @param z
-     * @return
-     */
-    public static String stringMaximum(String x,String y,String z) {
-        String maximum = x;
+    public static <E extends Comparable> E printMaximum(E x,E y,E z) {
+        E maximum = x;
         if (y.compareTo(maximum) > 0) {
             maximum = y;
         }
@@ -75,8 +38,8 @@ public class PrintMaximum {
         Integer firstNumber=1,secondNumber=2,thirdNumber=3;
         Float firstFloat=1.11f,secondFloat=2.2f,thirdFloat=3.3f;
         String firstString="linux",secondString="windows",thirdString="fedora";
-        integerMaximum(firstNumber,secondNumber,thirdNumber);
-        floatMaximum(firstFloat,secondFloat,thirdFloat);
-        stringMaximum(firstString,secondString,thirdString);
+        printMaximum(firstNumber,secondNumber,thirdNumber);
+        printMaximum(firstFloat,secondFloat,thirdFloat);
+        printMaximum(firstString,secondString,thirdString);
     }
 }
