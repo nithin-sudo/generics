@@ -68,7 +68,7 @@ public class PrintMaximum {
         System.out.println("Maximum of "+x+" ,"+y+" and "+z+"  is "+max);
     }
     /**
-     * creating three variables of type Integer and calling IntegerMaximum method.
+     * calling IntegerMaximum and floatMaximum and stringMaximum method to print the maximum value
      * @param args
      */
     public static void main(String[] args) {
