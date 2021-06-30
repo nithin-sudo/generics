@@ -15,6 +15,18 @@ public class PrintMaximum {
                         }
                     }
                 }
+        printArray(inputArray);
+    }
+    /**
+     * printing the array to the console.
+     * @param inputArray
+     * @param <E>
+     */
+    public static <E> void printArray(E[] inputArray){
+        System.out.println("array elements after sorting:");
+        for ( E i: inputArray){
+            System.out.println(i);
+        }
     }
     public static void main(String[] args) {
         Integer[] intArray = {5,6,7,8};
