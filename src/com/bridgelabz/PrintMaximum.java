@@ -6,7 +6,9 @@ public class PrintMaximum {
      */
     public static void main(String[] args) {
         Integer firstNumber=1,secondNumber=2,thirdNumber=3;
+        Float firstFloat=1.11f,secondFloat=2.2f,thirdFloat=3.3f;
         integerMaximum(firstNumber,secondNumber,thirdNumber);
+        floatMaximum(firstFloat,secondFloat,thirdFloat);
     }
     /**
      *Finding maximum integer among three integers using compareTo method.
@@ -26,6 +28,24 @@ public class PrintMaximum {
             maximum = z;
         }
         printMax(x,y,z,maximum);
+        return maximum;
+    }
+    /**
+     * Finding maximum float value among three integers using compareTo method
+     * @param x
+     * @param y
+     * @param z
+     * @return
+     */
+    public static Float floatMaximum(Float x,Float y,Float z) {
+        Float maximum = x;
+        if (y.compareTo(maximum) > 0) {
+            maximum = y;
+        }
+        if (z.compareTo(maximum) > 0) {
+            maximum = z;
+        }
+        printMax(x, y, z, maximum);
         return maximum;
     }
     /**
