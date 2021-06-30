@@ -1,5 +1,12 @@
 package com.bridgelabz;
-public class PrintMaximum{
+public class PrintMaximum<E extends Comparable<E>> {
+    E x,y,z;
+    
+    public PrintMaximum(E x, E y, E z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
     /**
      * using generic method to find the maximum values.
      * @param x
@@ -20,6 +27,12 @@ public class PrintMaximum{
         return maximum;
     }
     /**
+     * calling printMaximum from toPrint method.
+     */
+    public void toPrint(){
+        printMaximum(this.x,this.y,this.z);
+    }
+    /**
      *printing the maximum number using printMax generic method.
      * @param x
      * @param y
@@ -31,15 +44,18 @@ public class PrintMaximum{
         System.out.println("Maximum of "+x+" ,"+y+" and "+z+"  is "+max);
     }
     /**
-     * calling IntegerMaximum and floatMaximum and stringMaximum method to print the maximum value
+     * calling toPrint method by using object and passing arguments accordingly.
      * @param args
      */
     public static void main(String[] args) {
         Integer firstNumber=1,secondNumber=2,thirdNumber=3;
         Float firstFloat=1.11f,secondFloat=2.2f,thirdFloat=3.3f;
         String firstString="linux",secondString="windows",thirdString="fedora";
-        printMaximum(firstNumber,secondNumber,thirdNumber);
-        printMaximum(firstFloat,secondFloat,thirdFloat);
-        printMaximum(firstString,secondString,thirdString);
+        SampleClass<Integer> sampleClass = new SampleClass<Integer>(firstNumber,secondNumber,thirdNumber);
+        sampleClass.toPrint();
+        SampleClass<Float> sampleClass1 = new SampleClass<Float>(firstFloat,secondFloat,thirdFloat);
+        sampleClass1.toPrint();
+        SampleClass<String> sampleClass2 = new SampleClass<String>(firstString,secondString,thirdString);
+        sampleClass2.toPrint();
     }
 }
