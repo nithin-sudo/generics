@@ -1,61 +1,26 @@
 package com.bridgelabz;
-public class PrintMaximum<E extends Comparable<E>> {
-    E x,y,z;
-    
-    public PrintMaximum(E x, E y, E z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-    }
+public class PrintMaximum {
     /**
-     * using generic method to find the maximum values.
-     * @param x
-     * @param y
-     * @param z
-     * @param <E>
-     * @return
-     */
-    public static <E extends Comparable> E printMaximum(E x,E y,E z) {
-        E maximum = x;
-        if (y.compareTo(maximum) > 0) {
-            maximum = y;
-        }
-        if (z.compareTo(maximum) > 0) {
-            maximum = z;
-        }
-        printMax(x, y, z, maximum);
-        return maximum;
-    }
-    /**
-     * calling printMaximum from toPrint method.
-     */
-    public void toPrint(){
-        printMaximum(this.x,this.y,this.z);
-    }
-    /**
-     *printing the maximum number using printMax generic method.
-     * @param x
-     * @param y
-     * @param z
-     * @param max
+     * sorting the array by using bubble sort.
+     * @param inputArray
      * @param <E>
      */
-    public static <E>void printMax(E x,E y,E z, E max) {
-        System.out.println("Maximum of "+x+" ,"+y+" and "+z+"  is "+max);
+    public static <E extends Comparable> void sortArray(E[] inputArray) {
+                for (int i = 0; i < inputArray.length; i++) {
+                    for (int j = i + 1; j < inputArray.length; j++) {
+                        if (inputArray[i].compareTo(inputArray[j]) > 0) {
+                            E temp = inputArray[i];
+                            inputArray[i] = inputArray[j];
+                            inputArray[j] = temp;
+                        }
+                    }
+                }
     }
-    /**
-     * calling toPrint method by using object and passing arguments accordingly.
-     * @param args
-     */
     public static void main(String[] args) {
-        Integer firstNumber=1,secondNumber=2,thirdNumber=3;
-        Float firstFloat=1.11f,secondFloat=2.2f,thirdFloat=3.3f;
-        String firstString="linux",secondString="windows",thirdString="fedora";
-        SampleClass<Integer> sampleClass = new SampleClass<Integer>(firstNumber,secondNumber,thirdNumber);
-        sampleClass.toPrint();
-        SampleClass<Float> sampleClass1 = new SampleClass<Float>(firstFloat,secondFloat,thirdFloat);
-        sampleClass1.toPrint();
-        SampleClass<String> sampleClass2 = new SampleClass<String>(firstString,secondString,thirdString);
-        sampleClass2.toPrint();
+        Integer[] intArray = {5,6,7,8};
+        Double[] doubleArray = {4.22,2.22,3.22};
+        sortArray(intArray);
+        sortArray(doubleArray);
     }
 }
+
