@@ -51,11 +51,11 @@ public class PrintMaximum<E extends Comparable<E>> {
         Integer firstNumber=1,secondNumber=2,thirdNumber=3;
         Float firstFloat=1.11f,secondFloat=2.2f,thirdFloat=3.3f;
         String firstString="linux",secondString="windows",thirdString="fedora";
-        SampleClass<Integer> sampleClass = new SampleClass<Integer>(firstNumber,secondNumber,thirdNumber);
-        sampleClass.toPrint();
-        SampleClass<Float> sampleClass1 = new SampleClass<Float>(firstFloat,secondFloat,thirdFloat);
-        sampleClass1.toPrint();
-        SampleClass<String> sampleClass2 = new SampleClass<String>(firstString,secondString,thirdString);
-        sampleClass2.toPrint();
+        PrintMaximum<Integer> printMax = new PrintMaximum<Integer>(firstNumber,secondNumber,thirdNumber);
+        PrintMaximum.toPrint();
+        PrintMaximum<Float> printMax1 = new PrintMaximum<Float>(firstFloat,secondFloat,thirdFloat);
+        printMax1.toPrint();
+        PrintMaximum<String> printMax2= new PrintMaximum<String>(firstString,secondString,thirdString);
+        printMax2.toPrint();
     }
 }
